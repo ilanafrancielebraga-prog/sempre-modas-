@@ -3,8 +3,15 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Logo } from './Logo';
-import { buildWhatsAppUrl, WHATSAPP_MESSAGES, STORE_CITY, STORE_PHONE_LOCAL } from '@/lib/config';
-import { Menu, X, MessageCircle, MapPin, Phone } from 'lucide-react';
+import {
+  buildWhatsAppUrl,
+  WHATSAPP_MESSAGES,
+  STORE_CITY,
+  STORE_PHONE_LOCAL,
+  INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
+} from '@/lib/config';
+import { Menu, X, MessageCircle, MapPin, Phone, Instagram } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,6 +60,7 @@ export const Header: React.FC = () => {
               {STORE_CITY}/RS · Duas lojas no Centro: Matriz e Filial
             </span>
           </div>
+
           <div className="hidden md:flex items-center gap-4 shrink-0 text-black">
             <a
               href="#nossas-lojas"
@@ -62,7 +70,22 @@ export const Header: React.FC = () => {
               <MapPin className="w-3 h-3 text-black" />
               <span>Ver endereços</span>
             </a>
+
             <span className="text-black/40">|</span>
+
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline flex items-center gap-1"
+              aria-label="Acessar Instagram oficial da Sempre Modas Calçados"
+            >
+              <Instagram className="w-3 h-3 text-black" />
+              <span>{INSTAGRAM_HANDLE}</span>
+            </a>
+
+            <span className="text-black/40">|</span>
+
             <a
               href={whatsappHeroUrl}
               target="_blank"
@@ -113,8 +136,21 @@ export const Header: React.FC = () => {
               ))}
             </nav>
 
-            {/* ZONA 3: Botão de Ação WhatsApp em Turquesa Oficial */}
-            <div className="flex items-center gap-3">
+            {/* ZONA 3: Ações de Contato (Instagram + WhatsApp) */}
+            <div className="flex items-center gap-2.5">
+              {/* Ícone Minimalista Oficial do Instagram */}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md text-neutral-700 hover:text-black hover:bg-[#00B4B6]/15 border border-neutral-300 hover:border-[#00B4B6] transition-all"
+                aria-label="Visitar Instagram oficial @sempremodas.store"
+                title="Siga @sempremodas.store no Instagram"
+              >
+                <Instagram className="w-4 h-4 stroke-[2]" />
+              </a>
+
+              {/* Botão de WhatsApp */}
               <a
                 href={whatsappHeroUrl}
                 target="_blank"
@@ -123,7 +159,7 @@ export const Header: React.FC = () => {
                 aria-label="Falar com a Sempre Modas Calçados no WhatsApp"
               >
                 <MessageCircle className="w-4 h-4 fill-black text-[#00B4B6]" />
-                <span>WHATSAPP</span>
+                <span className="hidden sm:inline">WHATSAPP</span>
               </a>
 
               {/* Botão Mobile */}
@@ -161,6 +197,18 @@ export const Header: React.FC = () => {
             ))}
 
             <div className="pt-3 flex flex-col gap-2.5">
+              {/* Botão Instagram Mobile */}
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-2.5 text-xs font-bold text-neutral-900 bg-neutral-100 hover:bg-[#00B4B6]/20 border border-neutral-300 rounded-md transition-colors"
+              >
+                <Instagram className="w-4 h-4 text-[#00898b]" />
+                <span>Seguir {INSTAGRAM_HANDLE} no Instagram</span>
+              </a>
+
+              {/* Botão WhatsApp Mobile */}
               <a
                 href={whatsappHeroUrl}
                 target="_blank"

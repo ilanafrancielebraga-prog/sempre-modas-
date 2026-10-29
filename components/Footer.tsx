@@ -10,9 +10,10 @@ import {
   STORE_CITY,
   STORE_STATE,
   INSTAGRAM_URL,
+  INSTAGRAM_HANDLE,
   STORE_PHONE_DISPLAY,
 } from '@/lib/config';
-import { MessageCircle, MapPin, Navigation, ShieldCheck, X, Instagram } from 'lucide-react';
+import { MessageCircle, MapPin, Navigation, ShieldCheck, X, Instagram, ExternalLink } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
@@ -51,7 +52,8 @@ export const Footer: React.FC = () => {
               Comércio varejista de calçados femininos, masculinos e infantis. Variedade, estilo e conforto para toda a família em {STORE_CITY}, {STORE_STATE}.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            {/* Canais Oficiais de Contato & Redes Sociais */}
+            <div className="pt-2 flex flex-col gap-3 w-full sm:w-auto">
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -62,33 +64,33 @@ export const Footer: React.FC = () => {
                 <span>WhatsApp: {STORE_PHONE_DISPLAY}</span>
               </a>
 
-              {/* Componente Instagram — Preparado para ativação mediante inclusão de endereço oficial */}
-              {INSTAGRAM_URL ? (
+              {/* Área de Redes Sociais Dedicada: Instagram Oficial */}
+              <div className="p-3 bg-[#0a3134] rounded-md border border-[#00B4B6]/40 flex flex-col gap-1.5">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00B4B6]">
+                  Rede Social Oficial
+                </span>
                 <a
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-[#00B4B6] hover:text-white bg-[#0a3134] rounded-md border border-[#00B4B6]/40 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-white hover:text-[#00B4B6] transition-colors group"
+                  aria-label="Abrir Instagram oficial @sempremodas.store em nova aba"
+                  title="Acessar https://www.instagram.com/sempremodas.store/"
                 >
-                  <Instagram className="w-4 h-4" />
-                  <span>Instagram</span>
+                  <div className="w-6 h-6 rounded-sm bg-[#00B4B6] text-black flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <Instagram className="w-4 h-4 stroke-[2]" />
+                  </div>
+                  <span className="font-extrabold">{INSTAGRAM_HANDLE}</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-neutral-400 group-hover:text-[#00B4B6] transition-colors ml-auto" />
                 </a>
-              ) : (
-                <div
-                  className="inline-flex items-center gap-1.5 px-3 py-2 text-[11px] font-semibold text-neutral-400 bg-[#0a3134]/60 rounded-md border border-neutral-800"
-                  title="O Instagram oficial da loja será disponibilizado em breve"
-                >
-                  <Instagram className="w-3.5 h-3.5 text-neutral-500" />
-                  <span>Instagram (em breve)</span>
-                </div>
-              )}
+              </div>
             </div>
           </div>
 
           {/* Coluna 2: Navegação & Categorias */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-black text-[#00B4B6] uppercase tracking-wider mb-4">
-              Categorias
+              Navegação
             </h4>
             <ul className="space-y-2.5 text-sm font-medium text-neutral-300">
               <li>
@@ -134,6 +136,16 @@ export const Footer: React.FC = () => {
                   className="hover:text-[#00B4B6] transition-colors"
                 >
                   Catálogo Consultivo
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#instagram"
+                  onClick={(e) => handleNavClick(e, '#instagram')}
+                  className="hover:text-[#00B4B6] transition-colors flex items-center gap-1.5"
+                >
+                  <Instagram className="w-3.5 h-3.5 text-[#00B4B6]" />
+                  <span>Siga no Instagram</span>
                 </a>
               </li>
             </ul>
@@ -227,7 +239,7 @@ export const Footer: React.FC = () => {
                 A <strong>Sempre Modas Calçados</strong> respeita a privacidade de seus visitantes e atua em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).
               </p>
               <p>
-                Este website possui caráter institucional e catálogo consultivo. Não realizamos coleta de dados pessoais sem sua solicitação prévia e voluntária. O contato via WhatsApp ocorre diretamente em ambiente externo operado pela plataforma Meta/WhatsApp, regido por seus próprios termos de serviço.
+                Este website possui caráter institucional e catálogo consultivo. Não realizamos coleta de dados pessoais sem sua solicitação prévia e voluntária. O contato via WhatsApp e o acesso ao Instagram ocorrem diretamente em plataformas operadas pela Meta, regidos por seus próprios termos de serviço.
               </p>
               <p>
                 Qualquer dado eventualmente fornecido pelo cliente durante o atendimento é utilizado exclusivamente para responder às consultas sobre produtos e numerações de calçados nas lojas de Taquara/RS.

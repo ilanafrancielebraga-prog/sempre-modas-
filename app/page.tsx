@@ -6,6 +6,7 @@ import { Hero } from '@/components/Hero';
 import { CategoriesSection } from '@/components/CategoriesSection';
 import { BrandsSection } from '@/components/BrandsSection';
 import { ProductShowcase } from '@/components/ProductShowcase';
+import { InstagramSection } from '@/components/InstagramSection';
 import { ShoppingExperience } from '@/components/ShoppingExperience';
 import { StoresSection } from '@/components/StoresSection';
 import { WhatsAppCtaSection } from '@/components/WhatsAppCtaSection';
@@ -25,7 +26,7 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-neutral-900">
-      {/* SEÇÃO 1: Cabeçalho com Logo, Navegação e WhatsApp */}
+      {/* SEÇÃO 1: Cabeçalho com Logo, Navegação, WhatsApp e Instagram */}
       <Header />
 
       <main className="flex-grow">
@@ -38,11 +39,14 @@ export default function HomePage() {
         {/* SEÇÃO 4: Marcas que Você Encontra Aqui */}
         <BrandsSection />
 
-        {/* SEÇÃO 5: Vitrine de Produtos com Filtros e Consulta WhatsApp */}
+        {/* SEÇÃO 5: Vitrine de Produtos com Filtros Consultivos e WhatsApp */}
         <ProductShowcase
           activeCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
         />
+
+        {/* NOVA SEÇÃO: Siga Nosso Instagram (@sempremodas.store) */}
+        <InstagramSection />
 
         {/* SEÇÃO 6: Experiência de Compra (Variedade, Marcas, Atendimento) */}
         <ShoppingExperience />
@@ -54,7 +58,7 @@ export default function HomePage() {
         <WhatsAppCtaSection />
       </main>
 
-      {/* SEÇÃO 9: Rodapé Institucional */}
+      {/* SEÇÃO 9: Rodapé Institucional com Área de Redes Sociais */}
       <Footer />
 
       {/* Botão Flutuante Permanente de WhatsApp */}

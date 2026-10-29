@@ -53,11 +53,12 @@ export const STORE_STATE = 'RS';
 /**
  * CONFIGURAÇÃO DO INSTAGRAM
  * 
- * O endereço do Instagram ainda não foi informado pela empresa.
- * Não são criados links fictícios ou perfis inventados.
- * Configuração centralizada preparada para ativação imediata assim que fornecido.
+ * Perfil oficial confirmado pela empresa:
+ * https://www.instagram.com/sempremodas.store/
  */
-export const INSTAGRAM_URL = process.env.NEXT_PUBLIC_INSTAGRAM_URL || '';
+export const INSTAGRAM_HANDLE = '@sempremodas.store';
+export const INSTAGRAM_URL =
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://www.instagram.com/sempremodas.store/';
 
 /**
  * Função utilitária para gerar links do WhatsApp com mensagens pré-preenchidas e codificadas corretamente.

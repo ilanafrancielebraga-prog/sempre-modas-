@@ -65,6 +65,7 @@ export default function RootLayout({
     description:
       'Comércio varejista de calçados femininos, masculinos e infantis com duas lojas no Centro de Taquara, Rio Grande do Sul.',
     telephone: '+555135417010',
+    sameAs: ['https://www.instagram.com/sempremodas.store/'],
     areaServed: {
       '@type': 'City',
       name: 'Taquara',
