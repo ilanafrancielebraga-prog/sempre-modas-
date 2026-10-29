@@ -1,0 +1,6 @@
+{
+  "name": "Sempre Modas Calçados",
+  "description": "Landing page oficial da Sempre Modas Calçados em Taquara/RS. Calçados femininos, masculinos e infantis com atendimento ágil via WhatsApp e lojas no Centro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

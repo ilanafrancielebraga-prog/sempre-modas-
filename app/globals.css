@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #00B4B6;
+    color: #000000;
+  }
+}
+
+:root {
+  --turquoise-primary: #00B4B6;
+  --turquoise-dark: #00898B;
+  --turquoise-deep: #006062;
+  --turquoise-light: #e6fafb;
+  --turquoise-bg: #f2fcfc;
+}
